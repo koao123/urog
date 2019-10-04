@@ -9,5 +9,18 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
+  
+  def create
+    @post=Post.new(book_params)
+    @post.save
+    redirect_to action: 'index'
+  end
+  
 end
+
+private
+  def book_params
+    params.require(:post).permit(:title, :url)
+  end
