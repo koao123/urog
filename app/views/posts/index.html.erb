@@ -1,3 +1,20 @@
 <h1>投稿一覧</h1>
 
+<table>
+    <tr>
+        <th>Title</th>
+        <th>URL</th>
+    </tr>
+    
+    <% @post.each do |post| %>
+     <tr>
+        <td><%= post.title %></td>
+        <td><%= link_to "リンク", post.url %></td>
+        <td><%=link_to "Edit",edit_post_path(id: post.id) %></td>    
+    </tr>
+    <% end %>
+
+</table>
+
+
 <p><%= link_to "新規投稿",new_post_path %></p>
