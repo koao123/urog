@@ -2,8 +2,11 @@
   "name": "urog_app",
   "private": true,
   "dependencies": {
+    "handlebars": "^4.4.2",
     "mem": "^5.1.1",
-    "webpack-dev-server": "^3.8.2",
     "yaml-update": "^0.1.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.8.2"
   }
 }
