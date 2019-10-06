@@ -10,7 +10,8 @@
      <tr>
         <td><%= post.title %></td>
         <td><%= link_to "リンク", post.url %></td>
-        <td><%=link_to "Edit",edit_post_path(id: post.id) %></td>    
+        <td><%= link_to "Edit",edit_post_path(id: post.id) %></td>    
+        <td><%= link_to 'Destroy', post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
 

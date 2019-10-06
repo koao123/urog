@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post,only: [:edit,:update,:destroy]
+  
   def index
     @post=Post.all
-  end
-
-  def show
   end
 
   def edit
@@ -25,11 +23,16 @@ class PostsController < ApplicationController
     redirect_to action: 'index'
   end
   
+  def destroy
+    @post.destroy
+    redirect_to posts_url,notice: "投稿を削除しました"
+  end
+  
 end
 
 private
   def post_params
-    params.require(:post).permit(:id,:title, :url)
+    params.require(:post).permit(:title, :url)
   end
   def set_post
     @post=Post.find(params[:id])
